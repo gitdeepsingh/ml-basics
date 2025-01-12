@@ -34,11 +34,18 @@ classifier.fit(X_train, y_train)
 predicted_res = classifier.predict(sc.transform([[30, 90000]]))
 print('\n')
 print('predicting a new data point [30, 90000]. Result= ', predicted_res)
-print('\n')
 
 print('predicting the test dataset results...')
 try:     
     y_pred = classifier.predict(X_test)
-    print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))
+    print('writing the results as [[predictedValue groundTruthValue]] into predicted_outputs.txt ...')
+    pred_res = np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1)
+    with open("predicted_outputs.txt", "w") as file:
+        file.write(str(pred_res))
 except Exception as e:
     print(f'Error while predicting the test results. Reason= {e}') # gives error if we dont do sc.transform(X_test)
+
+from sklearn.metrics import accuracy_score, confusion_matrix
+cm = confusion_matrix(y_test, y_pred)
+acc_score = accuracy_score(y_test, y_pred)
+print(f'accuracy_score = {acc_score}\nconfusion matrix=\n{cm}')

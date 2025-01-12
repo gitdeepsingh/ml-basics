@@ -20,7 +20,7 @@ from sklearn.preprocessing import StandardScaler
 print('standardizing the training set for feature scaling.')
 sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
-X_test = sc.transform(X_train)
+X_test = sc.transform(X_test)
 # print(f'X_train= {X_train}')
 # print(f'X_test= {X_test}')
 
@@ -35,3 +35,10 @@ predicted_res = classifier.predict(sc.transform([[30, 90000]]))
 print('\n')
 print('predicting a new data point [30, 90000]. Result= ', predicted_res)
 print('\n')
+
+print('predicting the test dataset results...')
+try:     
+    y_pred = classifier.predict(X_test)
+    print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))
+except Exception as e:
+    print(f'Error while predicting the test results. Reason= {e}') # gives error if we dont do sc.transform(X_test)

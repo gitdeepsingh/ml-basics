@@ -49,3 +49,8 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
 acc_score = accuracy_score(y_test, y_pred)
 print(f'accuracy_score = {acc_score}\nconfusion matrix=\n{cm}')
+'''
+confusion matrix:
+[[TruePositive FalsePositive] [FalseNegative TrueNegative]]
+
+'''

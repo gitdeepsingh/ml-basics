@@ -1,6 +1,5 @@
 #%%
 import numpy as np
-import matplotlib.pyplot as plt
 import pandas as pd
 
 print('reading the dataset.')
@@ -60,7 +59,9 @@ confusion matrix:
 '''
 #%%
 # Visualising the Training set results
+import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
+
 print('visualising the training set results....')
 X_set, y_set = sc.inverse_transform(X_train), y_train
 X1, X2 = np.meshgrid(np.arange(start = X_set[:, 0].min() - 10, stop = X_set[:, 0].max() + 10, step = 1),

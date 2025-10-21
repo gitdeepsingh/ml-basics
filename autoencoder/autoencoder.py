@@ -82,9 +82,6 @@ plt.title("Original vs Reconstructed (Test Data)")
 plt.legend()
 plt.show()
 
-# ==============================
-# 9️⃣ Visualize Latent Space
-# ==============================
 latent_repr = encoder.predict(test_data)
 plt.figure(figsize=(5,4))
 plt.scatter(latent_repr[:, 0], latent_repr[:, 1], c='green')
@@ -94,13 +91,10 @@ plt.ylabel("Latent Dim 2")
 plt.show()
 
 # %%
-#testing
+# testing
 # Encode and decode test data
 encoded_data = encoder.predict(test_data)
 decoded_data = decoder.predict(encoded_data)
-
-# Compare visually
-import matplotlib.pyplot as plt
 
 n = 5  # show 5 random samples
 plt.figure(figsize=(10, 6))

@@ -56,6 +56,9 @@ Welcome to the **Machine Learning Basics** repository! This project is a compreh
 ---
 
 ## Running the Examples
+```python -m venv tf_env```
+```source tf_env/bin/activate ```
+
 1. Clone the repository:
 
     ```git clone <repo_url>```

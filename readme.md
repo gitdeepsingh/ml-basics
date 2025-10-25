@@ -23,7 +23,7 @@ Welcome to the **Machine Learning Basics** repository! This project is a compreh
    - Polynomial Regression
 5. **Advanced Models**
    - XGBoost
-   - Deep Learning (ANN, CNN)
+   - Deep Learning (ANN, CNN, RNN, LSTM, Autoencoders)
 
 ---
 
